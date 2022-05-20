@@ -25,7 +25,7 @@ export default function Header(props) {
 
   return (isAuthenticated ? <Container>
       <Row>
-        <Col sm={8}>Job Portal</Col>
+        <Col sm={8}><h1>Job Portal</h1></Col>
         <Col sm={4}>
           {user.email}
         <Button onClick={handleLogout}>Logout</Button>

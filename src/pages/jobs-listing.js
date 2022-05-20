@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import JobCard from "../components/job-card";
+import Layout from '../components/layout'
 
 const JobsListing = () => {
     const [jobs, setJobs] = useState([]);
@@ -26,6 +27,7 @@ const JobsListing = () => {
 
 
     return (
+      <Layout title="All Jobs">
         <div>
             <section id="featured" className="section bg-cyan">
                 <div className="container">
@@ -39,6 +41,7 @@ const JobsListing = () => {
                 </div>
             </section>
         </div>
+        </Layout>
     );
 };
 

@@ -41,7 +41,11 @@ export default function Login() {
           token: Math.random().toString(36).substr(2),
       },
     });
-    navigate("/"+userType, { replace: true });
+    if(userType === 'employee') {
+      navigate("/profile", { replace: true });
+    } else {
+      navigate("/jobs", { replace: true });
+    }
   }
 
     return (

@@ -9,7 +9,7 @@ import JobsListing from "./pages/jobs-listing";
 // import AppliedJobsPage from "./pages/employee/AppliedJobsPage";
 // import EmployeePrivateRoute from "./commons/EmployeePrivateRoute";
 // import EditProfilePage from "./pages/employee/EditProfilePage";
-import EmployerHome from "./pages/employer/dashboard";
+// import EmployerHome from "./pages/employer/dashboard";
 // import ApplicantsPage from "./pages/employer/ApplicantsPage";
 // import ApplicantsPerJobPage from "./pages/employer/ApplicantsPerJobPage";
 
@@ -22,7 +22,7 @@ const BaseRouter = () => {
               {/* <Route exact path="/jobs/:id" component={JobDetailsPage} /> */}
               <Route path="/login" element={<Login />} />
               {/* <EmployerPrivateRoute exact path="/post-job/" component={PostJobPage} /> */}
-              <Route path="/employer" element={<EmployerHome />} />
+              {/* <Route path="/employer" element={<EmployerHome />} /> */}
               {/* <EmployerPrivateRoute exact path="/employer/applicants/" component={ApplicantsPage} />
               <EmployerPrivateRoute exact path="/employer/applicants/:job_id" component={ApplicantsPerJobPage} />
               <EmployeePrivateRoute exact path="/edit-profile/" component={EditProfilePage} />

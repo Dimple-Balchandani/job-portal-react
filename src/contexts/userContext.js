@@ -1,8 +1,9 @@
 import React, { createContext, useReducer } from "react";
 import authReducer from "../reducers/authReducer";
+import * as _ from 'underscore';
 
 const initialState = {
-  isAuthenticated: false,
+  isAuthenticated: !_.isEmpty(localStorage.getItem('token')) || false,
   user: {},
   token: null
 }
@@ -18,7 +19,7 @@ export const AuthContextProvider = (props) => {
   const [state, authDispatch] = useReducer(authReducer, initialState);
 
   return (
-      <UserContext.Provider value={
+      <UserContext.Provider value = {
           {
               state, authDispatch, ActionTypes
           }}>

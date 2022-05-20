@@ -7,12 +7,9 @@ export default function JobCard(props) {
     <Card style={{ marginBottom: '1rem' }}>
       <Card.Body>
         <Card.Title>{title}</Card.Title>
-        <Card.Text>
           <div>{description}</div> 
-          {/* <div>{salary}</div>  */}
-          <div><b>Skills:</b> {skills}</div> 
+          <div><b>Skills Required:</b> {skills}</div> 
           <div><b>Location:</b> {location}</div>
-        </Card.Text>
       </Card.Body>
     </Card>
   )
