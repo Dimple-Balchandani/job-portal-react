@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 import Container from 'react-bootstrap/Container';
-import { UserContext } from "../context/userContext";
+import { UserContext } from "../contexts/userContext";
 
 export default function Login() {
 

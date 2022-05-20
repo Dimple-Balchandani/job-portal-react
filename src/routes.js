@@ -2,14 +2,14 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Login from "./pages/login";
 // import JobDetailsPage from "./pages/JobDetailsPage";
-// import JobsPage from "./pages/JobsPage";
+import JobsListing from "./pages/jobs-listing";
 // import LoginPage from "./pages/LoginPage";
 // import EmployerPrivateRoute from "./commons/EmployerPrivateRoute";
 // import PostJobPage from "./pages/employer/PostJobPage";
 // import AppliedJobsPage from "./pages/employee/AppliedJobsPage";
 // import EmployeePrivateRoute from "./commons/EmployeePrivateRoute";
 // import EditProfilePage from "./pages/employee/EditProfilePage";
-import EmployerHome from "./pages/employer-home";
+import EmployerHome from "./pages/employer/dashboard";
 // import ApplicantsPage from "./pages/employer/ApplicantsPage";
 // import ApplicantsPerJobPage from "./pages/employer/ApplicantsPerJobPage";
 
@@ -18,8 +18,8 @@ const BaseRouter = () => {
       <div>
           <Routes>
               <Route exact path="/" element={<Login />} />
-              {/* <Route exact path="/jobs" component={JobsPage} />
-              <Route exact path="/jobs/:id" component={JobDetailsPage} /> */}
+              <Route exact path="/jobs" element={<JobsListing />} />
+              {/* <Route exact path="/jobs/:id" component={JobDetailsPage} /> */}
               <Route path="/login" element={<Login />} />
               {/* <EmployerPrivateRoute exact path="/post-job/" component={PostJobPage} /> */}
               <Route path="/employer" element={<EmployerHome />} />
