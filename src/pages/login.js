@@ -28,7 +28,7 @@ export default function Login() {
   }
 
   function userLogin(details) {
-    return Promise.resolve(details);
+    return Promise.resolve({...details, type: userType});
   }
 
   const handleLogin = async () => {

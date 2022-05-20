@@ -5,13 +5,11 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import {UserContext} from '../contexts/userContext';
-import ErrorPage from "./error.js";
-import Nav from 'react-bootstrap/Nav'
 
-export default function Header(props) {
+export default function Header() {
 
   const userContext = useContext(UserContext);
-  const {isAuthenticated, user} = userContext.state;
+  const {user} = userContext.state;
 
   let navigate = useNavigate();
   
@@ -20,10 +18,11 @@ export default function Header(props) {
         type: 'LOGOUT',
         payload: {},
     });
+    localStorage.removeItem('user');
     navigate("/login", { replace: true });
   }
 
-  return (isAuthenticated ? <Container>
+  return (<Container>
       <Row>
         <Col sm={8}><h1>Job Portal</h1></Col>
         <Col sm={4}>
@@ -31,26 +30,5 @@ export default function Header(props) {
         <Button onClick={handleLogout}>Logout</Button>
         </Col>
       </Row>
-      {props.type === 'employee' ? (<Row>
-        <Nav variant="pills" defaultActiveKey="/profile">
-          <Nav.Item>
-            <Nav.Link href="/profile">Profile</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/jobs">jobs</Nav.Link>
-          </Nav.Item>
-      </Nav>
-      </Row>) : 
-      (<Row>
-        <Nav variant="pills" defaultActiveKey="/jobs">
-          <Nav.Item>
-            <Nav.Link href="/jobs" >Jobs</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/create-job" >Add new job</Nav.Link>
-          </Nav.Item>
-      </Nav>
-      </Row>)}
-    </Container> : <ErrorPage />
-    );
+    </Container>);
   }

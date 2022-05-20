@@ -1,11 +1,11 @@
 import React from "react";
-import Header from '../../components/header'
+import Layout from '../../components/header'
 
 export default function Profile() {
 
     return (
-        <div>
-            <Header type="employee"/>
-        </div>
-    );
+        <Layout title="Profile">
+                <div>dnbde</div>
+            </Layout>
+        );
 }
