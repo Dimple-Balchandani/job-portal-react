@@ -44,10 +44,10 @@ export default function Header(props) {
       (<Row>
         <Nav variant="pills" defaultActiveKey="/jobs">
           <Nav.Item>
-            <Nav.Link href="/jobs">jobs</Nav.Link>
+            <Nav.Link href="/jobs" >Jobs</Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link eventKey="/create-job">Add new job</Nav.Link>
+            <Nav.Link href="/create-job" >Add new job</Nav.Link>
           </Nav.Item>
       </Nav>
       </Row>)}
