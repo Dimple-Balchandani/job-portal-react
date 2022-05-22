@@ -53,32 +53,32 @@ const CreateJob = () => {
       <Form>
       <Form.Group className="mb-3" controlId="company">
           <Form.Label>Company name</Form.Label>
-          <Form.Control type="text" placeholder="Company" name="company" onChange={(e) => handleChange(e)} isInvalid={errorMessage.company !== null}/>
+          <Form.Control type="text" placeholder="Company" name="company" onChange={(e) => handleChange(e)} isInvalid={!_.isEmpty(errorMessage.company)}/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="title">
           <Form.Label>Job title</Form.Label>
-          <Form.Control type="text" placeholder="Enter title" name="title" onChange={(e) => handleChange(e)} isInvalid={errorMessage.title !== null}/>
+          <Form.Control type="text" placeholder="Enter title" name="title" onChange={(e) => handleChange(e)} isInvalid={!_.isEmpty(errorMessage.title)}/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="description">
           <Form.Label>Description</Form.Label>
-          <Form.Control type="file" placeholder="Description" name="description" onChange={(e) => handleChange(e)} isInvalid={errorMessage.description !== null}/>
+          <Form.Control type="file" placeholder="Description" name="description" onChange={(e) => handleChange(e)} isInvalid={!_.isEmpty(errorMessage.description)}/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="location">
           <Form.Label>Location</Form.Label>
-          <Form.Control type="text" placeholder="Location" name="location" onChange={(e) => handleChange(e)} isInvalid={errorMessage.location !== null}/>
+          <Form.Control type="text" placeholder="Location" name="location" onChange={(e) => handleChange(e)} isInvalid={!_.isEmpty(errorMessage.location)}/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="salary">
           <Form.Label>Salary</Form.Label>
-          <Form.Control type="text" placeholder="Salary" name="salary" onChange={(e) => handleChange(e)} isInvalid={errorMessage.salary !== null}/>
+          <Form.Control type="text" placeholder="Salary" name="salary" onChange={(e) => handleChange(e)} isInvalid={!_.isEmpty(errorMessage.salary)}/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="skills">
           <Form.Label>Skills Required</Form.Label>
-          <Form.Control type="text" placeholder="Skills" name="skills" onChange={(e) => handleChange(e)} isInvalid={errorMessage.skills !== null}/>
+          <Form.Control type="text" placeholder="Skills" name="skills" onChange={(e) => handleChange(e)} isInvalid={!_.isEmpty(errorMessage.skills)}/>
         </Form.Group>
 
         <Button variant="primary" type="submit" onClick={(e) => handleSubmit(e)}>

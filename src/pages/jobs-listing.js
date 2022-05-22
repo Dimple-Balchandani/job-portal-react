@@ -45,7 +45,7 @@ const JobsListing = () => {
     }
     
     return (
-      <Layout title="All Jobs">
+      <Layout title="Jobs">
         <div>
             <section>
                 <div className="container">
@@ -56,20 +56,14 @@ const JobsListing = () => {
                         aria-describedby="basic-addon2"
                         onChange={(e)=>searchHandler(e)}
                         />
-                        <Button variant="outline-secondary" id="button-addon2" onClick={searchJobs}>
-                        Search
-                        </Button>
+                        <Button variant="outline-secondary" id="button-addon2" onClick={searchJobs}>Search</Button>
                     </InputGroup>
                 </div>
             </section>
             <section id="featured" className="section bg-cyan">
                 <div className="container">
                     <div className="row">
-                        {
-                            jobs.length && jobs.map(job => {
-                                return <JobCard job={job} key={job.id}/>;
-                            })
-                        }
+                        {jobs.length && jobs.map(job => <JobCard job={job} key={job.id}/>)}
                     </div>
                 </div>
             </section>
