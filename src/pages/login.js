@@ -28,7 +28,7 @@ export default function Login() {
   }
 
   function userLogin(details) {
-    return Promise.resolve({...details, type: userType});
+    return Promise.resolve({...details, type: userType, name: 'Dimple', experience: '6yrs', location: 'Bangalore', skills : 'react'});
   }
 
   const handleLogin = async () => {
@@ -62,7 +62,7 @@ export default function Login() {
           <Form.Control type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
         </Form.Group>
         <div>
-        <ToggleButtonGroup name="userType">
+        {/* <ToggleButtonGroup name="userType">
           <ToggleButton
             key={1}
             id={1}
@@ -85,7 +85,29 @@ export default function Login() {
           >
             Employer
           </ToggleButton>
-        </ToggleButtonGroup>
+        </ToggleButtonGroup> */}
+         <div className="mb-3">
+          <Form.Check
+            inline
+            label="Employee"
+            name="group1"
+            type="radio"
+            id="employee"
+            value={"employee"}
+            checked={userType === "employee"}
+            onChange={(e) => setUserType("employee")}
+          />
+          <Form.Check
+            inline
+            label="Employer"
+            name="group1"
+            type="radio"
+            id="employer"
+            value={"employer"}
+            checked={userType === "employer"}
+            onChange={(e) => setUserType("employer")}
+          />
+          </div>
         </div>
         <div>
         <Button variant="primary" type="submit" className="submit" onClick={handleSubmit}>
