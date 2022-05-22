@@ -2,8 +2,6 @@ import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import ToggleButton from 'react-bootstrap/ToggleButton';
-import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 import Container from 'react-bootstrap/Container';
 import { UserContext } from "../contexts/userContext";
 
@@ -62,30 +60,6 @@ export default function Login() {
           <Form.Control type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
         </Form.Group>
         <div>
-        {/* <ToggleButtonGroup name="userType">
-          <ToggleButton
-            key={1}
-            id={1}
-            type="radio"
-            name="radio"
-            value={"employee"}
-            checked={userType === "employee"}
-            onChange={(e) => setUserType("employee")}
-          >
-            Employee
-          </ToggleButton>
-          <ToggleButton
-            key={2}
-            id={2}
-            type="radio"
-            name="radio"
-            value={"employer"}
-            checked={userType === "employer"}
-            onChange={(e) => setUserType("employer")}
-          >
-            Employer
-          </ToggleButton>
-        </ToggleButtonGroup> */}
          <div className="mb-3">
           <Form.Check
             inline

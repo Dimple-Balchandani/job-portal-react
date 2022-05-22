@@ -11,10 +11,10 @@ const JobsListing = () => {
     const [searchQuery, setQuery] = useState('');
 
     useEffect(() => {
-        fetchData();
+        fetchJobs();
     }, []);
 
-    const fetchData = () => {
+    const fetchJobs = () => {
         let cachedJobs = JSON.parse(localStorage.getItem('jobs'));
         if(!_.isEmpty(cachedJobs)) {
             setJobs(cachedJobs);

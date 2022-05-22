@@ -14,14 +14,7 @@ const CreateJob = () => {
     "description": null,
     "location": null
   });
-  const [errorMessage, setErrorMessage] = useState({
-    "title": null,
-    "company": null,
-    "salary": null,
-    "skills": null,
-    "description": null,
-    "location": null
-  });
+  const [errorMessage, setErrorMessage] = useState({});
 
   function handleChange(e) {
     jobInfo[e.target.name] = e.target.value;

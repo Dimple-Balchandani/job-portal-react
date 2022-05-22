@@ -22,9 +22,18 @@ export default function Header() {
     navigate("/login", { replace: true });
   }
 
+  const onHomeClick = () => {
+    if(user.type === "employee") {
+      navigate("/profile", { replace: true });
+    } else {
+      navigate("/jobs", { replace: true });
+    }
+  }
+  
+
   return (<Container>
       <Row>
-        <Col sm={8}><h1>Job Portal</h1></Col>
+        <Col sm={8}><h1 onClick={onHomeClick}>Job Portal</h1></Col>
         <Col sm={4}>
           {user.email}
         <Button onClick={handleLogout}>Logout</Button>
