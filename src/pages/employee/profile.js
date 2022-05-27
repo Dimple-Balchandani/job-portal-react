@@ -21,7 +21,7 @@ const Profile = (props) => {
 
     function fetchUserInfo() {
         //make api to fetch user data based on user id -> props.id
-        let info = {"id":2,"name":"Dimple Balchandani","email": "user@intuit.com", "skills":"Aenean fermentum.Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.","url":"www.github.com","experience":"6 years","location":"Bangalore"};
+        let info = JSON.parse(localStorage.getItem('user'))
         setUserInfo(info);
     }
 

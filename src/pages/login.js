@@ -26,7 +26,7 @@ export default function Login() {
   }
 
   function userLogin(details) {
-    return Promise.resolve({...details, type: userType, name: 'Dimple', experience: '6yrs', location: 'Bangalore', skills : 'react'});
+    return Promise.resolve({...details, type: userType, name: 'Dimple', experience: '6yrs', location: 'Bangalore', skills : 'react', url: 'www.github.com/dimple'});
   }
 
   const handleLogin = async () => {
