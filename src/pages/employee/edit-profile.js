@@ -12,6 +12,7 @@ const skills = ['Please select', 'webpack', 'javascript', 'react', 'angular', 't
 const EditProfile = () => {
   const [userInfo, setInfo] = useState(JSON.parse(localStorage.getItem('user')));
   const [errorMessage, setErrorMessage] = useState({});
+  const [isEmailInvalid, setEmailInvalid] = useState(false);
   const userContext = useContext(UserContext);
   const navigate = useNavigate();
 
@@ -19,6 +20,12 @@ const EditProfile = () => {
     let info = {...userInfo};
     info[e.target.name] = e.target.value
     setInfo(info);
+    if(e.target.name === 'email') {
+      let exp = /\S+@\S+\.\S+/;
+      if(!exp.test(e.target.value)) {
+        setEmailInvalid(true);
+      }
+    }
   }
 
   function validateData() {
@@ -36,6 +43,8 @@ const EditProfile = () => {
     if(validateData()) {
       setInfo(userInfo);
       localStorage.setItem('user', JSON.stringify(userInfo));
+    } else {
+      return false;
     }
     //after sucessful PUT call, fetch updated data
     userContext.authDispatch({
@@ -60,7 +69,7 @@ const EditProfile = () => {
 
         <Form.Group className="mb-3" controlId="email">
           <Form.Label>Email</Form.Label>
-          <Form.Control type="text" placeholder="Enter email" value={userInfo['email']} name="email" onChange={(e) => handleChange(e)} isInvalid={!_.isEmpty(errorMessage.email)}/>
+          <Form.Control type="text" placeholder="Enter email" value={userInfo['email']} name="email" onChange={(e) => handleChange(e)} isInvalid={isEmailInvalid}/>
           {!_.isEmpty(errorMessage.email) && <Form.Label className="error">{errorMessage.email}</Form.Label>}
         </Form.Group>
 
